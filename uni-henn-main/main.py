@@ -8,7 +8,7 @@ if __name__ == "__main__":
         raise ValueError("Please input only one argv.")
 
     file_type = int(sys.argv[1])
-    if file_type < 1 or file_type > 11:
+    if file_type < 1 or file_type > 13:
         raise ValueError("Incorrect file type. Please input between 1 and 7.")
 
     """
@@ -21,7 +21,7 @@ if __name__ == "__main__":
     """
     # context = Context(N = 2**14, depth = 8, LogQ = 40, LogP = 60)
     # context = Context()
-    context = Context(N=2**14, depth=15, LogQ=40, LogP=60)
+    context = Context(N=2**14, depth=30, LogQ=25, LogP=35)  
     print(f"the number of slots is {context.number_of_slots}")
     files = ['example/M1_test.py',
              'example/M2_test.py',
@@ -33,7 +33,9 @@ if __name__ == "__main__":
              'example/pathologie.py',
              'example/chestxray.py',
              'example/dermato.py',
-             'example/pneumonia.py']
+             'example/pneumonia.py',
+             'example/breast.py',
+             'example/retina.py']
     
     test_filename = files[file_type - 1]
     with open(test_filename) as test_file:
